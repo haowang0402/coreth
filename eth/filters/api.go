@@ -35,12 +35,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/haowang0402/coreth/core/types"
-	"github.com/haowang0402/coreth/interfaces"
-	"github.com/haowang0402/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/event"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/interfaces"
+	"github.com/haowang0402/coreth/rpc"
 )
 
 // filter is a helper struct that holds meta information over the filter type
@@ -177,6 +177,7 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 
 				for i, h := range hashes {
 					data := customSubscription{hash: h, toAddr: toAddresses[i]}
+					fmt.Printf("returned data %v", data)
 					notifier.Notify(rpcSub.ID, data)
 				}
 			case <-rpcSub.Err():

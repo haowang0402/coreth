@@ -461,10 +461,7 @@ func (es *EventSystem) handleTxsEvent(filters filterIndex, ev core.NewTxsEvent, 
 	for _, tx := range ev.Txs {
 		hashes = append(hashes, tx.Hash())
 		if tx.To() != nil {
-			fmt.Printf("received tx addr %v", *tx.To())
 			toAddr = append(toAddr, *tx.To())
-		} else {
-			fmt.Printf("received hash %v  with no tx.to", tx.Hash())
 		}
 	}
 	for _, f := range filters[PendingTransactionsSubscription] {
