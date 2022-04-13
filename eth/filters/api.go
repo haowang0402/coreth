@@ -177,8 +177,6 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 
 				for i, h := range hashes {
 					data := map[string]string{"hash": h.Hex(), "toAddr": toAddresses[i].Hex()}
-					fmt.Printf("returned data %v", data)
-
 					notifier.Notify(rpcSub.ID, data)
 				}
 			case <-rpcSub.Err():
