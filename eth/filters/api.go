@@ -176,8 +176,9 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 				toAddresses := <-txToAddr
 
 				for i, h := range hashes {
-					data := customSubscription{hash: h, toAddr: toAddresses[i]}
+					data := map[string]string{"hash": h.Hex(), "toAddr": toAddresses[i].Hex()}
 					fmt.Printf("returned data %v", data)
+
 					notifier.Notify(rpcSub.ID, data)
 				}
 			case <-rpcSub.Err():
