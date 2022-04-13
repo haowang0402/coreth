@@ -33,10 +33,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/eth/tracers"
-	"github.com/ava-labs/coreth/params"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/vm"
+	"github.com/haowang0402/coreth/eth/tracers"
+	"github.com/haowang0402/coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 )
 

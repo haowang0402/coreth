@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	coreth "github.com/ava-labs/coreth/chain"
-	"github.com/ava-labs/coreth/params"
+	coreth "github.com/haowang0402/coreth/chain"
+	"github.com/haowang0402/coreth/params"
 
 	"github.com/ava-labs/avalanchego/snow"
 	commonEng "github.com/ava-labs/avalanchego/snow/engine/common"

@@ -35,8 +35,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/eth/tracers"
+	"github.com/haowang0402/coreth/core/vm"
+	"github.com/haowang0402/coreth/eth/tracers"
 	"github.com/ethereum/go-ethereum/common"
 )
 

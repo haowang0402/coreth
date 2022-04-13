@@ -36,13 +36,13 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/eth/tracers"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/tests"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/rawdb"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/core/vm"
+	"github.com/haowang0402/coreth/eth/tracers"
+	"github.com/haowang0402/coreth/params"
+	"github.com/haowang0402/coreth/tests"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/common/math"
@@ -50,8 +50,8 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 
 	// Force-load native and js pacakges, to trigger registration
-	_ "github.com/ava-labs/coreth/eth/tracers/js"
-	_ "github.com/ava-labs/coreth/eth/tracers/native"
+	_ "github.com/haowang0402/coreth/eth/tracers/js"
+	_ "github.com/haowang0402/coreth/eth/tracers/native"
 )
 
 // To generate a new callTracer test, copy paste the makeTest method below into

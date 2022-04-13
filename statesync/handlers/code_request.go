@@ -10,10 +10,10 @@ import (
 	"github.com/ava-labs/avalanchego/codec"
 	"github.com/ava-labs/avalanchego/ids"
 
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/ethdb"
-	"github.com/ava-labs/coreth/plugin/evm/message"
-	"github.com/ava-labs/coreth/statesync/handlers/stats"
+	"github.com/haowang0402/coreth/core/rawdb"
+	"github.com/haowang0402/coreth/ethdb"
+	"github.com/haowang0402/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/statesync/handlers/stats"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 )

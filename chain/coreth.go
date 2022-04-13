@@ -8,14 +8,14 @@ import (
 	"time"
 
 	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/eth"
-	"github.com/ava-labs/coreth/ethdb"
-	"github.com/ava-labs/coreth/node"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/haowang0402/coreth/consensus/dummy"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/eth"
+	"github.com/haowang0402/coreth/ethdb"
+	"github.com/haowang0402/coreth/node"
+	"github.com/haowang0402/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 )
 

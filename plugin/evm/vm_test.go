@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/trie"
+	"github.com/haowang0402/coreth/trie"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
@@ -44,14 +44,14 @@ import (
 
 	engCommon "github.com/ava-labs/avalanchego/snow/engine/common"
 
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/eth"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/haowang0402/coreth/consensus/dummy"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/eth"
+	"github.com/haowang0402/coreth/params"
+	"github.com/haowang0402/coreth/rpc"
 
-	accountKeystore "github.com/ava-labs/coreth/accounts/keystore"
+	accountKeystore "github.com/haowang0402/coreth/accounts/keystore"
 )
 
 var (

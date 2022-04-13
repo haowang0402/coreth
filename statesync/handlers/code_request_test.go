@@ -9,13 +9,13 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/ava-labs/coreth/params"
+	"github.com/haowang0402/coreth/params"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/ethdb/memorydb"
-	"github.com/ava-labs/coreth/plugin/evm/message"
-	"github.com/ava-labs/coreth/statesync/handlers/stats"
+	"github.com/haowang0402/coreth/core/rawdb"
+	"github.com/haowang0402/coreth/ethdb/memorydb"
+	"github.com/haowang0402/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/statesync/handlers/stats"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"

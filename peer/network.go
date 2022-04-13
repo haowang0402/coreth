@@ -18,7 +18,7 @@ import (
 	"github.com/ava-labs/avalanchego/snow/validators"
 	"github.com/ava-labs/avalanchego/version"
 
-	"github.com/ava-labs/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/plugin/evm/message"
 	"github.com/ethereum/go-ethereum/log"
 )
 

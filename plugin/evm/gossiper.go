@@ -11,7 +11,7 @@ import (
 
 	"github.com/ava-labs/avalanchego/codec"
 
-	"github.com/ava-labs/coreth/peer"
+	"github.com/haowang0402/coreth/peer"
 
 	"github.com/ava-labs/avalanchego/cache"
 	"github.com/ava-labs/avalanchego/ids"
@@ -22,10 +22,10 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/plugin/evm/message"
 )
 
 const (

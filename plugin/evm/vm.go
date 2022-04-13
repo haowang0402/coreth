@@ -17,20 +17,20 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/plugin/evm/message"
 
 	avalanchegoMetrics "github.com/ava-labs/avalanchego/api/metrics"
-	coreth "github.com/ava-labs/coreth/chain"
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/eth/ethconfig"
-	corethPrometheus "github.com/ava-labs/coreth/metrics/prometheus"
-	"github.com/ava-labs/coreth/node"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/peer"
-	"github.com/ava-labs/coreth/rpc"
+	coreth "github.com/haowang0402/coreth/chain"
+	"github.com/haowang0402/coreth/consensus/dummy"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/eth/ethconfig"
+	corethPrometheus "github.com/haowang0402/coreth/metrics/prometheus"
+	"github.com/haowang0402/coreth/node"
+	"github.com/haowang0402/coreth/params"
+	"github.com/haowang0402/coreth/peer"
+	"github.com/haowang0402/coreth/rpc"
 
 	"github.com/prometheus/client_golang/prometheus"
 	// Force-load tracer engine to trigger registration
@@ -38,8 +38,8 @@ import (
 	// We must import this package (not referenced elsewhere) so that the native "callTracer"
 	// is added to a map of client-accessible tracers. In geth, this is done
 	// inside of cmd/geth.
-	_ "github.com/ava-labs/coreth/eth/tracers/js"
-	_ "github.com/ava-labs/coreth/eth/tracers/native"
+	_ "github.com/haowang0402/coreth/eth/tracers/js"
+	_ "github.com/haowang0402/coreth/eth/tracers/native"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"

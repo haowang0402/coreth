@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ava-labs/coreth/params"
+	"github.com/haowang0402/coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/ava-labs/avalanchego/chains/atomic"

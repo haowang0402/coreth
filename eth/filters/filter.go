@@ -32,13 +32,13 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ava-labs/coreth/core/vm"
+	"github.com/haowang0402/coreth/core/vm"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/bloombits"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/ethdb"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/bloombits"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/ethdb"
+	"github.com/haowang0402/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/event"
 )

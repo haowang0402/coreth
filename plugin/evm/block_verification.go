@@ -11,11 +11,11 @@ import (
 
 	safemath "github.com/ava-labs/avalanchego/utils/math"
 
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/trie"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/params"
+	"github.com/haowang0402/coreth/trie"
 
-	coreth "github.com/ava-labs/coreth/chain"
+	coreth "github.com/haowang0402/coreth/chain"
 )
 
 var (

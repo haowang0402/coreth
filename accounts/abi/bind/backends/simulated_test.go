@@ -37,12 +37,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/accounts/abi"
-	"github.com/ava-labs/coreth/accounts/abi/bind"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
-	"github.com/ava-labs/coreth/params"
+	"github.com/haowang0402/coreth/accounts/abi"
+	"github.com/haowang0402/coreth/accounts/abi/bind"
+	"github.com/haowang0402/coreth/core"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/interfaces"
+	"github.com/haowang0402/coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 )

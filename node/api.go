@@ -27,8 +27,8 @@
 package node
 
 import (
-	"github.com/ava-labs/coreth/internal/debug"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/haowang0402/coreth/internal/debug"
+	"github.com/haowang0402/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 )

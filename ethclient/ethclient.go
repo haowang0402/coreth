@@ -35,10 +35,10 @@ import (
 	"math/big"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/coreth/accounts/abi/bind"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/haowang0402/coreth/accounts/abi/bind"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/interfaces"
+	"github.com/haowang0402/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )

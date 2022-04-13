@@ -7,7 +7,7 @@ import (
 	"context"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/plugin/evm/message"
 )
 
 var _ message.RequestHandler = &syncHandler{}

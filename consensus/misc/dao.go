@@ -31,9 +31,9 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/params"
 )
 
 var (

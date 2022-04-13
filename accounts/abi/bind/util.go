@@ -31,8 +31,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/interfaces"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 )

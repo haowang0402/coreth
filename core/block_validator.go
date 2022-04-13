@@ -29,11 +29,11 @@ package core
 import (
 	"fmt"
 
-	"github.com/ava-labs/coreth/consensus"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/trie"
+	"github.com/haowang0402/coreth/consensus"
+	"github.com/haowang0402/coreth/core/state"
+	"github.com/haowang0402/coreth/core/types"
+	"github.com/haowang0402/coreth/params"
+	"github.com/haowang0402/coreth/trie"
 )
 
 // BlockValidator is responsible for validating block headers, uncles and

@@ -29,7 +29,7 @@ package core
 import (
 	"sync"
 
-	"github.com/ava-labs/coreth/core/state"
+	"github.com/haowang0402/coreth/core/state"
 	"github.com/ethereum/go-ethereum/common"
 )
 

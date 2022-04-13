@@ -8,15 +8,15 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/coreth/core/types"
+	"github.com/haowang0402/coreth/core/types"
 
 	"github.com/ava-labs/avalanchego/codec"
 	"github.com/ava-labs/avalanchego/ids"
 
-	"github.com/ava-labs/coreth/ethdb/memorydb"
-	"github.com/ava-labs/coreth/plugin/evm/message"
-	"github.com/ava-labs/coreth/statesync/handlers/stats"
-	"github.com/ava-labs/coreth/trie"
+	"github.com/haowang0402/coreth/ethdb/memorydb"
+	"github.com/haowang0402/coreth/plugin/evm/message"
+	"github.com/haowang0402/coreth/statesync/handlers/stats"
+	"github.com/haowang0402/coreth/trie"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 )
