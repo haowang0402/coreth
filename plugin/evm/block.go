@@ -15,9 +15,9 @@ import (
 	"github.com/haowang0402/coreth/core/types"
 	"github.com/haowang0402/coreth/params"
 
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/choices"
+	"github.com/haowang0402/avalanchego/chains/atomic"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/snow/choices"
 )
 
 var (

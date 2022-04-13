@@ -9,14 +9,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/avalanchego/codec"
+	"github.com/haowang0402/avalanchego/codec"
 
 	"github.com/haowang0402/coreth/peer"
 
-	"github.com/ava-labs/avalanchego/cache"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/haowang0402/avalanchego/cache"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/snow"
+	"github.com/haowang0402/avalanchego/utils/wrappers"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"

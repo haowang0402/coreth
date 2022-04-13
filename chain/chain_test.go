@@ -9,7 +9,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/haowang0402/avalanchego/utils/timer/mockable"
 	"github.com/haowang0402/coreth/accounts/keystore"
 	"github.com/haowang0402/coreth/consensus/dummy"
 	"github.com/haowang0402/coreth/core"

@@ -4,7 +4,7 @@
 package evm
 
 import (
-	"github.com/ava-labs/avalanchego/database"
+	"github.com/haowang0402/avalanchego/database"
 	"github.com/haowang0402/coreth/ethdb"
 )
 

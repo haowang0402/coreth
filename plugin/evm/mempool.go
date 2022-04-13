@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/cache"
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/cache"
+	"github.com/haowang0402/avalanchego/ids"
 	"github.com/ethereum/go-ethereum/log"
 )
 

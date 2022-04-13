@@ -8,7 +8,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/ids"
 )
 
 var _ GossipHandler = NoopMempoolGossipHandler{}

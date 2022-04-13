@@ -28,7 +28,7 @@
 package miner
 
 import (
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/haowang0402/avalanchego/utils/timer/mockable"
 	"github.com/haowang0402/coreth/consensus"
 	"github.com/haowang0402/coreth/core"
 	"github.com/haowang0402/coreth/core/types"

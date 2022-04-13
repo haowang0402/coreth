@@ -34,7 +34,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/ids"
 	"github.com/haowang0402/coreth/accounts"
 	"github.com/haowang0402/coreth/accounts/keystore"
 	"github.com/haowang0402/coreth/accounts/scwallet"

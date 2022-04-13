@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/snow"
+	"github.com/haowang0402/avalanchego/chains/atomic"
+	"github.com/haowang0402/avalanchego/snow"
 	"github.com/haowang0402/coreth/params"
 )
 

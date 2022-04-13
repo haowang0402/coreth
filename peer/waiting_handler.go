@@ -4,7 +4,7 @@
 package peer
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/ids"
 	"github.com/haowang0402/coreth/plugin/evm/message"
 )
 

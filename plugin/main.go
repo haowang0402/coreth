@@ -9,9 +9,9 @@ import (
 
 	"github.com/hashicorp/go-plugin"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/ulimit"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm"
+	"github.com/haowang0402/avalanchego/utils/logging"
+	"github.com/haowang0402/avalanchego/utils/ulimit"
+	"github.com/haowang0402/avalanchego/vms/rpcchainvm"
 
 	"github.com/haowang0402/coreth/plugin/evm"
 )

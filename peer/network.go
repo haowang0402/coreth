@@ -12,11 +12,11 @@ import (
 
 	"golang.org/x/sync/semaphore"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/haowang0402/avalanchego/codec"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/snow/engine/common"
+	"github.com/haowang0402/avalanchego/snow/validators"
+	"github.com/haowang0402/avalanchego/version"
 
 	"github.com/haowang0402/coreth/plugin/evm/message"
 	"github.com/ethereum/go-ethereum/log"

@@ -11,7 +11,7 @@ import (
 
 	"github.com/haowang0402/coreth/params"
 
-	"github.com/ava-labs/avalanchego/snow"
+	"github.com/haowang0402/avalanchego/snow"
 )
 
 func TestBlockBuilderShutsDown(t *testing.T) {

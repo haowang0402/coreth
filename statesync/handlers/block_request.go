@@ -8,8 +8,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/codec"
+	"github.com/haowang0402/avalanchego/ids"
 
 	"github.com/haowang0402/coreth/core/types"
 	"github.com/haowang0402/coreth/peer"

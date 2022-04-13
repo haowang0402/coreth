@@ -8,11 +8,11 @@ import (
 
 	"github.com/haowang0402/coreth/params"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/components/chain"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/utils/crypto"
+	"github.com/haowang0402/avalanchego/vms/components/avax"
+	"github.com/haowang0402/avalanchego/vms/components/chain"
+	"github.com/haowang0402/avalanchego/vms/secp256k1fx"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -9,7 +9,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/ids"
 	"github.com/haowang0402/coreth/ethdb/memorydb"
 	"github.com/haowang0402/coreth/plugin/evm/message"
 	"github.com/haowang0402/coreth/statesync/handlers/stats"

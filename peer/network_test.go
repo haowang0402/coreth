@@ -12,14 +12,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/avalanchego/snow/engine/common"
+	"github.com/haowang0402/avalanchego/snow/engine/common"
 
 	"github.com/haowang0402/coreth/plugin/evm/message"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/codec/linearcodec"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/haowang0402/avalanchego/codec"
+	"github.com/haowang0402/avalanchego/codec/linearcodec"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/version"
 	"github.com/stretchr/testify/assert"
 )
 

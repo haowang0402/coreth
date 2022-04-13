@@ -7,13 +7,13 @@ ARG AVALANCHE_VERSION
 RUN mkdir -p $GOPATH/src/github.com/ava-labs
 WORKDIR $GOPATH/src/github.com/ava-labs
 
-RUN git clone -b $AVALANCHE_VERSION --single-branch https://github.com/ava-labs/avalanchego.git
+RUN git clone -b $AVALANCHE_VERSION --single-branch https://github.com/haowang0402/avalanchego.git
 
 # Copy coreth repo into desired location
 COPY . coreth
 
 # Set the workdir to AvalancheGo and update coreth dependency to local version
-WORKDIR $GOPATH/src/github.com/ava-labs/avalanchego
+WORKDIR $GOPATH/src/github.com/haowang0402/avalanchego
 # Run go mod download here to improve caching of AvalancheGo specific depednencies
 RUN go mod download
 # Replace the coreth dependency
@@ -34,6 +34,6 @@ RUN mkdir -p /avalanchego/build
 WORKDIR /avalanchego/build
 
 # Copy the executables into the container
-COPY --from=builder /go/src/github.com/ava-labs/avalanchego/build .
+COPY --from=builder /go/src/github.com/haowang0402/avalanchego/build .
 
 CMD [ "./avalanchego" ]

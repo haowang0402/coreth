@@ -6,12 +6,12 @@ package evm
 import (
 	"testing"
 
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/database/memdb"
-	"github.com/ava-labs/avalanchego/database/versiondb"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/haowang0402/avalanchego/chains/atomic"
+	"github.com/haowang0402/avalanchego/database/memdb"
+	"github.com/haowang0402/avalanchego/database/versiondb"
+	"github.com/haowang0402/avalanchego/ids"
+	"github.com/haowang0402/avalanchego/utils"
+	"github.com/haowang0402/avalanchego/utils/logging"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/assert"
 )

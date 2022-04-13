@@ -11,9 +11,9 @@ import (
 	coreth "github.com/haowang0402/coreth/chain"
 	"github.com/haowang0402/coreth/params"
 
-	"github.com/ava-labs/avalanchego/snow"
-	commonEng "github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/utils/timer"
+	"github.com/haowang0402/avalanchego/snow"
+	commonEng "github.com/haowang0402/avalanchego/snow/engine/common"
+	"github.com/haowang0402/avalanchego/utils/timer"
 	"github.com/ethereum/go-ethereum/log"
 )
 
