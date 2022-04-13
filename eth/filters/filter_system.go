@@ -34,14 +34,14 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/event"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/haowang0402/coreth/core"
 	"github.com/haowang0402/coreth/core/rawdb"
 	"github.com/haowang0402/coreth/core/types"
 	"github.com/haowang0402/coreth/interfaces"
 	"github.com/haowang0402/coreth/rpc"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 // Type determines the kind of filter and is used to put the filter in to
@@ -460,8 +460,9 @@ func (es *EventSystem) handleTxsEvent(filters filterIndex, ev core.NewTxsEvent, 
 	toAddr := make([]common.Address, 0, len(ev.Txs))
 	for _, tx := range ev.Txs {
 		hashes = append(hashes, tx.Hash())
+		fmt.Printf("------------------WARNING----------------")
 		fmt.Printf("received tx %v", tx.To())
-		toAddr = append(toAddr, tx.To())
+		toAddr = append(toAddr, *tx.To())
 	}
 	for _, f := range filters[PendingTransactionsSubscription] {
 		f.hashes <- hashes
