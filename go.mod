@@ -1,4 +1,4 @@
-module github.com/ava-labs/coreth
+module github.com/haowang0402/coreth
 
 go 1.16
 
