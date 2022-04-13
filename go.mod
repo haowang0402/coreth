@@ -4,7 +4,6 @@ go 1.16
 
 require (
 	github.com/VictoriaMetrics/fastcache v1.9.0
-	github.com/haowang0402/avalanchego v2.0.0
 	github.com/cespare/cp v0.1.0
 	github.com/davecgh/go-spew v1.1.1
 	github.com/deckarep/golang-set v1.8.0
@@ -14,6 +13,7 @@ require (
 	github.com/google/uuid v1.1.5
 	github.com/gorilla/rpc v1.2.0
 	github.com/gorilla/websocket v1.4.2
+	github.com/haowang0402/avalanchego v1.7.11
 	github.com/hashicorp/go-bexpr v0.1.10
 	github.com/hashicorp/go-plugin v1.4.3
 	github.com/hashicorp/golang-lru v0.5.5-0.20210104140557-80c98217689d
