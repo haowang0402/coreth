@@ -118,8 +118,9 @@ func (api *PublicFilterAPI) timeoutLoop(timeout time.Duration) {
 // https://eth.wiki/json-rpc/API#eth_newpendingtransactionfilter
 func (api *PublicFilterAPI) NewPendingTransactionFilter() rpc.ID {
 	var (
-		pendingTxs   = make(chan []common.Hash)
-		pendingTxSub = api.events.SubscribePendingTxs(pendingTxs)
+		pendingTxs       = make(chan []common.Hash)
+		pendingTxsToAddr = make(chan []common.Address)
+		pendingTxSub     = api.events.SubscribePendingTxs(pendingTxs, pendingTxsToAddr)
 	)
 
 	api.filtersMu.Lock()
@@ -147,6 +148,11 @@ func (api *PublicFilterAPI) NewPendingTransactionFilter() rpc.ID {
 	return pendingTxSub.ID
 }
 
+type customSubscription struct {
+	hash   common.Hash
+	toAddr common.Address
+}
+
 // NewPendingTransactions creates a subscription that is triggered each time a transaction
 // enters the transaction pool and was signed from one of the transactions this nodes manages.
 func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Subscription, error) {
@@ -159,15 +165,19 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 
 	go func() {
 		txHashes := make(chan []common.Hash, 128)
-		pendingTxSub := api.events.SubscribePendingTxs(txHashes)
+		txToAddr := make(chan []common.Address, 128)
+		pendingTxSub := api.events.SubscribePendingTxs(txHashes, txToAddr)
 
 		for {
 			select {
 			case hashes := <-txHashes:
 				// To keep the original behaviour, send a single tx hash in one notification.
 				// TODO(rjl493456442) Send a batch of tx hashes in one notification
-				for _, h := range hashes {
-					notifier.Notify(rpcSub.ID, h)
+				toAddresses := <-txToAddr
+
+				for i, h := range hashes {
+					data := customSubscription{hash: h, toAddr: toAddresses[i]}
+					notifier.Notify(rpcSub.ID, data)
 				}
 			case <-rpcSub.Err():
 				pendingTxSub.Unsubscribe()
