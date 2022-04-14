@@ -120,7 +120,8 @@ func (api *PublicFilterAPI) NewPendingTransactionFilter() rpc.ID {
 	var (
 		pendingTxs       = make(chan []common.Hash)
 		pendingTxsToAddr = make(chan []common.Address)
-		pendingTxSub     = api.events.SubscribePendingTxs(pendingTxs, pendingTxsToAddr)
+		pendingTxsTip    = make(chan []big.Int)
+		pendingTxSub     = api.events.SubscribePendingTxs(pendingTxs, pendingTxsToAddr, pendingTxsTip)
 	)
 
 	api.filtersMu.Lock()
@@ -148,11 +149,6 @@ func (api *PublicFilterAPI) NewPendingTransactionFilter() rpc.ID {
 	return pendingTxSub.ID
 }
 
-type customSubscription struct {
-	hash   common.Hash
-	toAddr common.Address
-}
-
 // NewPendingTransactions creates a subscription that is triggered each time a transaction
 // enters the transaction pool and was signed from one of the transactions this nodes manages.
 func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Subscription, error) {
@@ -166,7 +162,8 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 	go func() {
 		txHashes := make(chan []common.Hash, 128)
 		txToAddr := make(chan []common.Address, 128)
-		pendingTxSub := api.events.SubscribePendingTxs(txHashes, txToAddr)
+		gasTip := make(chan []big.Int, 128)
+		pendingTxSub := api.events.SubscribePendingTxs(txHashes, txToAddr, gasTip)
 
 		for {
 			select {
@@ -174,9 +171,9 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 				// To keep the original behaviour, send a single tx hash in one notification.
 				// TODO(rjl493456442) Send a batch of tx hashes in one notification
 				toAddresses := <-txToAddr
-
+				gasTips := <-gasTip
 				for i, h := range hashes {
-					data := [2]string{h.Hex(), toAddresses[i].Hex()}
+					data := [3]string{h.Hex(), toAddresses[i].Hex(), gasTips[i].String()}
 					notifier.Notify(rpcSub.ID, data)
 				}
 			case <-rpcSub.Err():
