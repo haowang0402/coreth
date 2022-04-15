@@ -33,12 +33,12 @@ import (
 	"runtime"
 	"runtime/debug"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/haowang0402/coreth/core/types"
 	"github.com/haowang0402/coreth/ethclient"
 	"github.com/haowang0402/coreth/interfaces"
 	"github.com/haowang0402/coreth/rpc"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
 // Client is a wrapper around rpc.Client that implements geth-specific functionality.
@@ -173,6 +173,10 @@ func (ec *Client) MemStats(ctx context.Context) (*runtime.MemStats, error) {
 // SubscribePendingTransactions subscribes to new pending transactions.
 func (ec *Client) SubscribePendingTransactions(ctx context.Context, ch chan<- common.Hash) (*rpc.ClientSubscription, error) {
 	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactions")
+}
+
+func (ec *Client) SubscribePendingTransactionsByAddress(ctx context.Context, ch chan<- common.Hash, addr string) (*rpc.ClientSubscription, error) {
+	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactionsByAddress", addr)
 }
 
 func toCallArg(msg interfaces.CallMsg) interface{} {

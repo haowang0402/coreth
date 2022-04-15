@@ -189,6 +189,46 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 	return rpcSub, nil
 }
 
+func (api *PublicFilterAPI) NewPendingTransactionsByAddr(ctx context.Context, addr string) (*rpc.Subscription, error) {
+	notifier, supported := rpc.NotifierFromContext(ctx)
+	if !supported {
+		return &rpc.Subscription{}, rpc.ErrNotificationsUnsupported
+	}
+
+	rpcSub := notifier.CreateSubscription()
+
+	go func() {
+		txHashes := make(chan []common.Hash, 128)
+		txToAddr := make(chan []common.Address, 128)
+		gasTip := make(chan []big.Int, 128)
+		pendingTxSub := api.events.SubscribePendingTxs(txHashes, txToAddr, gasTip)
+
+		for {
+			select {
+			case hashes := <-txHashes:
+				// To keep the original behaviour, send a single tx hash in one notification.
+				// TODO(rjl493456442) Send a batch of tx hashes in one notification
+				toAddresses := <-txToAddr
+				gasTips := <-gasTip
+				for i, h := range hashes {
+					if toAddresses[i].Hex() == addr {
+						data := [3]string{h.Hex(), toAddresses[i].Hex(), gasTips[i].String()}
+						notifier.Notify(rpcSub.ID, data)
+					}
+				}
+			case <-rpcSub.Err():
+				pendingTxSub.Unsubscribe()
+				return
+			case <-notifier.Closed():
+				pendingTxSub.Unsubscribe()
+				return
+			}
+		}
+	}()
+
+	return rpcSub, nil
+}
+
 // NewAcceptedTransactions creates a subscription that is triggered each time a transaction is accepted.
 func (api *PublicFilterAPI) NewAcceptedTransactions(ctx context.Context) (*rpc.Subscription, error) {
 	notifier, supported := rpc.NotifierFromContext(ctx)

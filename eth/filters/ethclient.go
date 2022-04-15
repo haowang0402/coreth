@@ -80,8 +80,8 @@ type Client interface {
 	TransactionInBlock(context.Context, common.Hash, uint) (*types.Transaction, error)
 	TransactionReceipt(context.Context, common.Hash) (*types.Receipt, error)
 	SubscribeNewAcceptedTransactions(context.Context, chan<- *common.Hash) (interfaces.Subscription, error)
-	SubscribeNewPendingTransactions(context.Context, chan<- *common.Hash) (interfaces.Subscription, error)
-	SubscribeNewPendingTransactionsByAddress(context.Context, chan<- *common.Hash, common.Address) (interfaces.Subscription, error)
+	Subscribe(context.Context, chan<- *common.Hash) (interfaces.Subscription, error)
+	SubscribeByAddress(context.Context, chan<- *common.Hash) (interfaces.Subscription, error)
 	SubscribeNewHead(context.Context, chan<- *types.Header) (interfaces.Subscription, error)
 	NetworkID(context.Context) (*big.Int, error)
 	BalanceAt(context.Context, common.Address, *big.Int) (*big.Int, error)
@@ -366,12 +366,8 @@ func (ec *client) SubscribeNewAcceptedTransactions(ctx context.Context, ch chan<
 }
 
 // SubscribeNewAcceptedTransactions subscribes to notifications about the accepted transaction hashes on the given channel.
-func (ec *client) SubscribeNewPendingTransactions(ctx context.Context, ch chan<- *common.Hash) (interfaces.Subscription, error) {
-	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactions")
-}
-
-func (ec *client) SubscribeNewPendingTransactionsByAddress(ctx context.Context, ch chan<- *common.Hash, addr string) (interfaces.Subscription, error) {
-	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactionsByAddress", addr)
+func (ec *client) Subscribe(ctx context.Context, ch chan<- *common.Hash) (interfaces.Subscription, error) {
+	return ec.c.EthSubscribe(ctx, ch, "")
 }
 
 // SubscribeNewHead subscribes to notifications about the current blockchain head
