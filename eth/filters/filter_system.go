@@ -467,6 +467,9 @@ func (es *EventSystem) handleTxsEvent(filters filterIndex, ev core.NewTxsEvent, 
 		if tx.To() != nil {
 			toAddr = append(toAddr, *(tx.To()))
 			gasTip = append(gasTip, *(tx.GasTipCap()))
+		} else {
+			toAddr = append(toAddr, common.HexToAddress("0x0000000000000000000000000000000000000000"))
+			gasTip = append(gasTip, *big.NewInt(0))
 		}
 	}
 	for _, f := range filters[PendingTransactionsSubscription] {

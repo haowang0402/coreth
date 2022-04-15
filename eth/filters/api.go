@@ -173,7 +173,6 @@ func (api *PublicFilterAPI) NewPendingTransactions(ctx context.Context) (*rpc.Su
 				toAddresses := <-txToAddr
 				gasTips := <-gasTip
 				for i, h := range hashes {
-					fmt.Printf("hash : %s toAddr : %v, gasTip: %v", h.Hex(), toAddresses[i], gasTips[i])
 					data := [3]string{h.Hex(), toAddresses[i].Hex(), gasTips[i].String()}
 					notifier.Notify(rpcSub.ID, data)
 				}
