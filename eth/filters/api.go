@@ -386,6 +386,53 @@ func (api *PublicFilterAPI) Logs(ctx context.Context, crit FilterCriteria) (*rpc
 	return rpcSub, nil
 }
 
+func (api *PublicFilterAPI) LogsBlock(ctx context.Context, crit FilterCriteria) (*rpc.Subscription, error) {
+	notifier, supported := rpc.NotifierFromContext(ctx)
+	if !supported {
+		return &rpc.Subscription{}, rpc.ErrNotificationsUnsupported
+	}
+
+	var (
+		rpcSub      = notifier.CreateSubscription()
+		matchedLogs = make(chan []*types.Log)
+		logsSub     event.Subscription
+		err         error
+	)
+
+	if api.backend.GetVMConfig().AllowUnfinalizedQueries {
+		logsSub, err = api.events.SubscribeLogs(interfaces.FilterQuery(crit), matchedLogs)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		logsSub, err = api.events.SubscribeAcceptedLogs(interfaces.FilterQuery(crit), matchedLogs)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	go func() {
+		for {
+			select {
+			case logs := <-matchedLogs:
+				data := make([]types.Log, 0)
+				for _, log := range logs {
+					data = append(data, *log)
+				}
+				notifier.Notify(rpcSub.ID, data)
+			case <-rpcSub.Err(): // client send an unsubscribe request
+				logsSub.Unsubscribe()
+				return
+			case <-notifier.Closed(): // connection dropped
+				logsSub.Unsubscribe()
+				return
+			}
+		}
+	}()
+
+	return rpcSub, nil
+}
+
 // FilterCriteria represents a request to create a new filter.
 // Same as interfaces.FilterQuery but with UnmarshalJSON() method.
 type FilterCriteria interfaces.FilterQuery
