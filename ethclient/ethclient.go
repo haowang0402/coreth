@@ -33,7 +33,6 @@ import (
 	"errors"
 	"fmt"
 	"math/big"
-	"runtime/debug"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -368,8 +367,6 @@ func (ec *client) SubscribeNewAcceptedTransactions(ctx context.Context, ch chan<
 
 // SubscribeNewAcceptedTransactions subscribes to notifications about the accepted transaction hashes on the given channel.
 func (ec *client) SubscribeNewPendingTransactions(ctx context.Context, ch chan<- *common.Hash) (interfaces.Subscription, error) {
-	fmt.Printf("subscribe new pending txs")
-	debug.PrintStack()
 	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactions")
 }
 
@@ -380,8 +377,6 @@ func (ec *client) SubscribeNewPendingTransactionsByAddress(ctx context.Context, 
 // SubscribeNewHead subscribes to notifications about the current blockchain head
 // on the given channel.
 func (ec *client) SubscribeNewHead(ctx context.Context, ch chan<- *types.Header) (interfaces.Subscription, error) {
-	fmt.Printf("subscribe new pending heads")
-	debug.PrintStack()
 	return ec.c.EthSubscribe(ctx, ch, "newHeads")
 }
 

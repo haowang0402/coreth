@@ -29,7 +29,6 @@ package corethclient
 
 import (
 	"context"
-	"fmt"
 	"math/big"
 	"runtime"
 	"runtime/debug"
@@ -173,8 +172,6 @@ func (ec *Client) MemStats(ctx context.Context) (*runtime.MemStats, error) {
 
 // SubscribePendingTransactions subscribes to new pending transactions.
 func (ec *Client) SubscribePendingTransactions(ctx context.Context, ch chan<- common.Hash) (*rpc.ClientSubscription, error) {
-	fmt.Printf("subscribe new pending txs")
-	debug.PrintStack()
 	return ec.c.EthSubscribe(ctx, ch, "newPendingTransactions")
 }
 
