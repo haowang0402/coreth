@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/haowang0402/avalanchego/utils/timer/mockable"
 	"github.com/haowang0402/coreth/consensus/dummy"
 	"github.com/haowang0402/coreth/core"
@@ -16,7 +17,6 @@ import (
 	"github.com/haowang0402/coreth/ethdb"
 	"github.com/haowang0402/coreth/node"
 	"github.com/haowang0402/coreth/rpc"
-	"github.com/ethereum/go-ethereum/common"
 )
 
 var (
@@ -187,6 +187,7 @@ func (self *ETHChain) AttachEthService(handler *rpc.Server, names []string) erro
 		if !exists {
 			return fmt.Errorf("API service %s not found", name)
 		}
+		fmt.Printf("registed %s in the namespace %s\n", api.Service, api.Namespace)
 		if err := handler.RegisterName(api.Namespace, api.Service); err != nil {
 			return err
 		}
