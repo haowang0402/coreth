@@ -33,6 +33,7 @@ import (
 	"errors"
 	"fmt"
 	"math/big"
+	"runtime/debug"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -377,6 +378,7 @@ func (ec *client) SubscribeNewPendingTransactionsByAddress(ctx context.Context, 
 // SubscribeNewHead subscribes to notifications about the current blockchain head
 // on the given channel.
 func (ec *client) SubscribeNewHead(ctx context.Context, ch chan<- *types.Header) (interfaces.Subscription, error) {
+	debug.PrintStack()
 	return ec.c.EthSubscribe(ctx, ch, "newHeads")
 }
 
