@@ -187,7 +187,6 @@ func (self *ETHChain) AttachEthService(handler *rpc.Server, names []string) erro
 		if !exists {
 			return fmt.Errorf("API service %s not found", name)
 		}
-		fmt.Printf("registed %s in the namespace %s\n", api.Service, api.Namespace)
 		if err := handler.RegisterName(api.Namespace, api.Service); err != nil {
 			return err
 		}
