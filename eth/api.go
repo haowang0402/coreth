@@ -36,6 +36,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/haowang0402/coreth/core"
 	"github.com/haowang0402/coreth/core/rawdb"
 	"github.com/haowang0402/coreth/core/state"
@@ -43,10 +47,6 @@ import (
 	"github.com/haowang0402/coreth/internal/ethapi"
 	"github.com/haowang0402/coreth/rpc"
 	"github.com/haowang0402/coreth/trie"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rlp"
 )
 
 // PublicEthereumAPI provides an API to access Ethereum full node-related
